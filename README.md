@@ -1,24 +1,29 @@
-# BBC news classification analysis using natural language processing
-> Deep learning prediction of BBC news articles using natural language processing
+# Image segmentation of the Pet dataset using Unet
 
 ## Table of Contents
 * [General Info](#general-information)
+* [Results](Results)
 * [Technologies Used](#technologies-used)
-* [Room for Improvement](#room-for-improvement)
 * [Contact](#contact)
 <!-- * [License](#license) -->
 
 
 ## General Information
-- In this natural language processing project, I will a BBC news dataset from Kaggle [BBC News Classification](https://www.kaggle.com/c/learn-ai-bbc/overview), which contains 2225 examples of news articles with their respective labels. 
-- I am developing a model to perform classification of the BBC news articles into five categories: {1: 'sport', 2: 'business', 3: 'politics', 4: 'tech', 5: 'entertainment'}
-- In this project, I am utilizing a combination of the Embedding layer, GlobalAveragePooling1D and two dense layers to perform the classification
-- The project also contains pre-processing of the text corpus: tokenization, Sequences-truncating and -padding
-- The model achieves an accuracy of 95% on the validation set after 30 epochs.
-- Here is a snapshot of the training and validation loss during the training process.
+- The goal of the project is to develop a model to perform semantic image segmentation on the pet images
+- I am using a Unet neural network architecture which consists of an encoder and decoder section. This architecture is also a fully convolutional network:
 
-![Example screenshot](loss.png)
-![Example screenshot](accuracy.png)
+![Unet](Unet.png)
+![Encoder](Encoder.png)
+![Decoder](Decoder.png)
+
+- The dataset is Oxford Pets - IIT dataset [BBC News Classification](https://www.robots.ox.ac.uk/~vgg/data/pets/). This dataset contains pet images, their classes, segmentation masks and head region-of-interest. I will only use the images and segmentation masks in this project. This dataset is already included in TensorFlow Datasets and we can simply download it. The segmentation masks are included in versions 3 and above.
+- The model achieves an accuracy of 85% on the validation set after 15 epochs.
+- I ran the notebook on Arizona State University's supercomputing cluster using two Tesla V100 GPUs. The information regarding the GPUs is included at the end of the notebook.
+
+## Results
+
+![Example screenshot](Result1.png)
+![Example screenshot](Result2.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
 ## Technologies Used
@@ -27,9 +32,6 @@
 - Pandas
 - Matplotlib
 - Keras
-
-## Room for improvement:
-- Improvement could be made by doing transfer learning or using GloVe as a pre-trained embedding layer.
 
 ## Contact
 Created by [Miralireza Nabavi](anabavib@asu.edu) - feel free to contact me!
